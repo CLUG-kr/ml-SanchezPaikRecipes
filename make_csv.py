@@ -13,9 +13,8 @@ os.makedirs(image_dir, exist_ok=True)
 train_txt = open(out_path, 'w')
 
 label_txt = open(label_path, 'r')
-object_name = label_txt.readlines()
+object_name = [line[:-1] for line in label_txt]
 label_txt.close()
-
 
 train_txt.write('image,id,name,xMin,xMax,yMin,yMax\n')
 
